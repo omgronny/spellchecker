@@ -23,10 +23,6 @@ private:
     const size_t n;
     const bool n_or_count;
 
-    std::map<std::string, std::pair<size_t, double>> words_count_index;
-    std::map<std::string, size_t> bigrams;
-    std::map<std::string, size_t> threegrams;
-
     cds::container::FeldmanHashMap<cds::gc::HP, std::string, std::pair<size_t, double>, map_traits> cds_words_count_index;
     cds::container::FeldmanHashMap<cds::gc::HP, std::string, size_t, map_traits> cds_bigrams;
     cds::container::FeldmanHashMap<cds::gc::HP, std::string, size_t, map_traits> cds_threegrams;
